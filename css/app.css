@@ -15,3 +15,8 @@ h1, h2, h3, h4, h5, h6 {
   color: rgb(0, 149, 222);
   /*font-weight: bolder;*/
 }
+
+.headerLink {
+	font-size: 120%;
+	vertical-align: middle;
+}

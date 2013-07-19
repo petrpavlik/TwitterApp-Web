@@ -43,17 +43,45 @@
 				<p>No need to put on glasses, fonts in Tweetilus adjust to your global font settings.</p>
 			</ul>
 			<br/>
-			<div class="row">
-				<div class="large-6 large-centered columns">
-					<h3 align="center" class="appTitle">Coming fall 2013</h2>
-					<p align="center"><a href="https://twitter.com/ptrpavlik">Created by Petr Pavlik</a></p>
-					<br/>
-				</div>
-			</div>
+			<h3 align="center" class="appTitle">Coming fall 2013</h3>
+			<p align="center"><a href="#" data-reveal-id="subscribeModal"  class="headerLink">(let me know)</a></p>
+			<br/>
+			<p align="center"><a href="https://twitter.com/ptrpavlik">Created by Petr Pavlik</a></p>
+			<br/>
 		</div>
 		<div class="large-5 large-offset-1 pull-6 columns">
 			<img src="img/iPhone.png"/>
 		</div>
+	</div>
+	
+	<div id="subscribeModal" class="reveal-modal small">
+	
+		<p>You will receive an e-mail when Tweetilus is released</p>
+		
+		<form>
+		    <div class="row">
+			    <div class="large-8 columns large-centered">
+			      <div class="row collapse">
+			        <div class="small-10 columns">
+			          <input type="text" placeholder="Your email" id="emailInput">
+			        </div>
+			        <div class="small-2 columns">
+			          <a href="#" class="button prefix" onclick="processSubscription()">Submit</a>
+			        </div>
+			      </div>
+			    </div>
+			  </div>		
+		</form>
+		
+		<a class="close-reveal-modal">&#215;</a>
+		
+	</div>
+	
+	<div id="confirmSubscriptionModal" class="reveal-modal small">
+	
+		<p align="center">Thank you</p>
+		<a class="close-reveal-modal">&#215;</a>
+		
 	</div>
 
   <script>
@@ -101,6 +129,21 @@
   
   <script>
     $(document).foundation();
+    
+    function processSubscription() {
+	    
+	    var emailInput = document.getElementById('emailInput');
+	    var email = emailInput.value;
+	    
+	    if (email.length) {
+		    
+			//alert(emailInput.value);    
+			ga('send', 'event', 'subscriptions', 'add', email);
+			$('#confirmSubscriptionModal').foundation('reveal', 'open');
+	    }
+	    
+    }
+    
   </script>
 </body>
 </html>
