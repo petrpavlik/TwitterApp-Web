@@ -1,0 +1,17 @@
+body {
+  font-weight: lighter;
+  color: rgb(102, 102, 102);
+  padding-top: 20pt;
+  padding-bottom: 20pt;
+  position: relative;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: lighter;
+}
+
+.appTitle {
+  
+  color: rgb(0, 149, 222);
+  /*font-weight: bolder;*/
+}
